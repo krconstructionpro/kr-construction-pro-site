@@ -152,3 +152,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 /* real photos */
 .photo{display:block;width:100%;height:360px;object-fit:cover;border:1px solid #1d80b4;clip-path:polygon(5% 0,100% 0,95% 100%,0 100%)}
 @media(max-width:760px){.photo{height:260px}}
+
+.card-photo{display:block;width:100%;height:185px;object-fit:cover}
+@media(max-width:760px){.card-photo{height:220px}}
