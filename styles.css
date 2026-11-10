@@ -160,3 +160,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 .sms-link{color:#46c6ff;font-weight:700}
 .sms-link:hover{color:#ffffff}
+
+/* Services photo galleries */
+.gallery{position:relative;height:360px;border:1px solid #1d80b4;clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);background:#16405d}
+.gallery-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;outline:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-slide{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;display:block}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid #7edcff;background:rgba(3,29,56,.75);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 3px}
+.gallery-btn:hover{background:#078ee4}
+.gallery-prev{left:8%}.gallery-next{right:8%}
+.gallery-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px}
+.gallery-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5)}
+.gallery-dots span.on{background:#43d0ff}
+.gallery.is-single .gallery-btn,.gallery.is-single .gallery-dots{display:none}
+@media(max-width:760px){.gallery{height:260px}}
