@@ -143,3 +143,8 @@ form .btn{justify-self:start;cursor:pointer;font-family:inherit;font-size:15px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #43d0ff;outline-offset:3px}
 @media(max-width:760px){.nav{height:auto;flex-wrap:wrap;padding:12px 0;row-gap:10px}nav{display:flex!important;position:static;order:3;width:100%;justify-content:center;gap:28px;padding:0;background:none;border:0;flex-direction:row}nav a{padding:4px 0;font-size:14px}nav a.active:after{margin-top:4px}.brand img{height:58px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* hero photo */
+.hero{background-image:linear-gradient(90deg,rgba(2,23,44,.95) 0%,rgba(3,36,66,.85) 32%,rgba(3,34,60,.25) 62%,rgba(2,22,40,.05) 100%),url('assets/hero-pool-deck.jpg');background-size:cover;background-position:center 62%}
+.hero-photo-label{display:none}
+@media(max-width:760px){.hero{background-image:linear-gradient(180deg,rgba(2,23,44,.72),rgba(3,36,66,.82)),url('assets/hero-pool-deck-mobile.jpg');background-position:60% center}}
