@@ -155,3 +155,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 .card-photo{display:block;width:100%;height:185px;object-fit:cover}
 @media(max-width:760px){.card-photo{height:220px}}
+
+.svc-text{color:#c6d7e3;font-size:17px;line-height:1.6;max-width:560px;margin:6px 0 24px}
