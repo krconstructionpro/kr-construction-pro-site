@@ -1,0 +1,37 @@
+name: No new pages
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  no-new-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Block new HTML pages
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+          fi
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            echo "No base commit to compare. Skipping."; exit 0
+          fi
+          ADDED=$(git diff --name-only --diff-filter=AR "$BASE" "${{ github.sha }}" -- '*.html' '**/*.html' || true)
+          if [ -n "$ADDED" ]; then
+            echo "::error::New pages are not allowed in this repository:"
+            echo "$ADDED"
+            echo "::error::New pages and structure changes are done by NoScript Creative (Nayara Silva). Text, colors and photos can be changed on existing pages."
+            exit 1
+          fi
+          echo "OK: no new pages added."
